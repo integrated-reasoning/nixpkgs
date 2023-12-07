@@ -2,6 +2,7 @@
 , aiohttp
 , buildPythonPackage
 , certifi
+, elastic-transport
 , fetchPypi
 , pythonOlder
 , requests
@@ -19,6 +20,10 @@ buildPythonPackage rec {
     inherit pname version;
     sha256 = "sha256-nghBO+r/Oka8EMbFcGmoRwTfaqqTCFxzffB/WKKBG3g=";
   };
+
+  nativeBuildInputs = [
+    elastic-transport
+  ];
 
   propagatedBuildInputs = [
     urllib3
